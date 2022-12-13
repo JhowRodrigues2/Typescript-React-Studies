@@ -8,8 +8,8 @@ const Dashboard = () => {
       (e) => {
         if (e.key === "Enter") {
           if (e.currentTarget.value.trim().length === 0) return;
-
           const value = e.currentTarget.value;
+          if (lista.includes(value)) return alert("Valor já existente!");
           e.currentTarget.value = "";
           setLista([...lista, value]);
         }
