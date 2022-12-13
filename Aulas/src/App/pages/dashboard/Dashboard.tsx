@@ -1,10 +1,10 @@
 import React, { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
-import { UsuarioLogadoContext } from "../../shared/contexts";
+import { useUsuarioLogado } from "../../shared/hooks";
 
 const Dashboard = () => {
   const counterRef = useRef({ counter: 0 });
-  const { nomeDoUsuario } = useContext(UsuarioLogadoContext);
+  const { nomeDoUsuario } = useUsuarioLogado();
 
   return (
     <div>

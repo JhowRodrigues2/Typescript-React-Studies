@@ -8,12 +8,13 @@ import React, {
 } from "react";
 import ButtonLogin from "./components/ButtonLogin";
 import InputLogin from "./components/InputLogin";
-import { UsuarioLogadoContext } from "../../shared/contexts";
+import { useUsuarioLogado } from "../../shared/hooks";
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const inputPassRef = useRef<HTMLInputElement>(null); // explicitando que o use ref vai armazenar a referencia de um elemento html
-  const { nomeDoUsuario } = useContext(UsuarioLogadoContext);
+  const { nomeDoUsuario } = useUsuarioLogado();
 
   const emailLength = useMemo(() => {
     return email.length * 100;
