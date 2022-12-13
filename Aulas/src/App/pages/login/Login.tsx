@@ -13,7 +13,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const inputPassRef = useRef<HTMLInputElement>(null); // explicitando que o use ref vai armazenar a referencia de um elemento html
-  const userContext = useContext(UsuarioLogadoContext);
+  const { nomeDoUsuario } = useContext(UsuarioLogadoContext);
 
   const emailLength = useMemo(() => {
     return email.length * 100;
@@ -39,7 +39,7 @@ export default function Login() {
   return (
     <div>
       <form>
-        {userContext.nomeDoUsuario}
+        {nomeDoUsuario}
         <p>Quantidade de caracteres no email:{emailLength}</p>
         <InputLogin
           type="email"
